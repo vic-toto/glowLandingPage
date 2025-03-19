@@ -9,15 +9,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let particlesArray = [];
     
     class Particle {
-        constructor(x, y, size, speedX, speedY) {
+        constructor(x, y, size, speedX, speedY, life) {
             this.x = x;
             this.y = y;
             this.size = size;
             this.speedX = speedX;
             this.speedY = speedY;
+            this.life = life;
+            this.opacity = 1;
         }
         draw() {
-            ctx.fillStyle = "rgba(255, 215, 0, 0.8)"; // Gold Color
+            ctx.fillStyle = `rgba(255, 215, 0, ${this.opacity})`; // Gold Color with fading effect
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
@@ -25,26 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
         update() {
             this.x += this.speedX;
             this.y += this.speedY;
-            
-            if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-            if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
-        }
-    }
-    
-    function initParticles() {
-        particlesArray = [];
-        for (let i = 0; i < 50; i++) {
-            let size = Math.random() * 3 + 1;
-            let x = Math.random() * canvas.width;
-            let y = Math.random() * canvas.height;
-            let speedX = (Math.random() - 0.5) * 2;
-            let speedY = (Math.random() - 0.5) * 2;
-            particlesArray.push(new Particle(x, y, size, speedX, speedY));
+            this.opacity -= 0.02; // Slowly fade out
+            this.life--;
         }
     }
     
     function animateParticles() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particlesArray = particlesArray.filter(p => p.life > 0);
         particlesArray.forEach(particle => {
             particle.update();
             particle.draw();
@@ -55,21 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        initParticles();
     }
     
     window.addEventListener("resize", resizeCanvas);
     
     window.addEventListener("mousemove", (event) => {
-        let size = Math.random() * 3 + 2;
-        let speedX = (Math.random() - 0.5) * 2;
-        let speedY = (Math.random() - 0.5) * 2;
-        particlesArray.push(new Particle(event.x, event.y, size, speedX, speedY));
-        if (particlesArray.length > 80) {
+        let size = Math.random() * 4 + 2;
+        let speedX = (Math.random() - 0.5) * 1.5;
+        let speedY = (Math.random() - 0.5) * 1.5;
+        let life = 50 + Math.random() * 50;
+        particlesArray.push(new Particle(event.clientX, event.clientY, size, speedX, speedY, life));
+        if (particlesArray.length > 150) {
             particlesArray.shift();
         }
     });
     
-    initParticles();
     animateParticles();
 });

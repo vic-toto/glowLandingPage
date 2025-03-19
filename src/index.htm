@@ -7,77 +7,69 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-container">
-                    <img src="assets/logo.png" alt="GLOW Logo" class="logo-img">
-                </div>
-                <nav class="main-nav">
-                    <a href="#">Home</a>
-                    <a href="#about">Chi siamo</a>
-                    <a href="#values">Valori</a>
-                    <a href="#join">Unisciti</a>
-                </nav>
+    <div class="navbar-container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="GLOW Logo" class="logo-img">
             </div>
-        </div>
-    </header>
+            <nav class="sidebar-nav">
+                <a href="#hero">Home</a>
+                <a href="#about">Chi siamo</a>
+                <a href="#values">Valori</a>
+                <a href="#join">Unisciti</a>
+            </nav>
+        </aside>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <canvas id="particle-canvas"></canvas>
-        <div class="container">
-            <h1>GLOW ✨</h1>
-            <h1>Empowering Women, Building Connections</h1>
-            <p class="hero-description">Siamo una community di founder e femtrepreneur che fanno network. Creiamo opportunità di crescita e condivisione per tutte le donne nel mondo delle tech e dell'impresa. It's empowerment, not rocket science 🚀  </p>
-            <a href="#join" class="btn">Unisciti a noi</a>
-        </div>
-    </section>
+    <main class="content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-background">
+                <canvas id="particle-canvas"></canvas>
+            </div>
+            <div class="hero-text">
+                <h1 class="dramatic-text">GLOW ✨</h1>
+                <h2 class="dramatic-subtitle">Empowering Women, Building Connections</h2>
+                <p class="hero-description">Siamo una community di founder e femtrepreneur che fanno network. Creiamo opportunità di crescita e condivisione per tutte le donne nel mondo delle tech e dell'impresa. It's empowerment, not rocket science 🚀</p>
+                <a href="#join" class="btn">Unisciti a noi</a>
+            </div>
+        </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-container">
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="about-content">
                 <div class="about-text">
                     <h2>Cos'è GLOW?</h2>
-                    <p> GLOW è una community vibrante nata a Roma nel 2023 che unisce donne nel mondo imprenditoriale grazie al potere di un semplicissimo aperitivo. Ogni mese organizziamo meet-up, dove si intrecciano esperienze, consigli e opportunità di collaborazione per spingerci lontane a vicenda.</p>
+                    <p>GLOW è una community vibrante nata a Roma nel 2023 che unisce donne nel mondo imprenditoriale grazie al potere di un semplicissimo aperitivo. Ogni mese organizziamo meet-up, dove si intrecciano esperienze, consigli e opportunità di collaborazione per spingerci lontane a vicenda.</p>
                 </div>
                 <div class="about-image">
                     <img src="assets/photo1.jpg" alt="Women Networking" class="about-img">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Values Section -->
-    <section class="values" id="values">
-        <div class="container">
+        <!-- Values Section -->
+        <section class="values" id="values">
             <h2>I 4 valori di GLOW</h2>
             <div class="values-grid">
                 <div class="value-card">
-                    <div class="value-icon">✨</div>
-                    <h3>Empowerment</h3>
+                    <h3>✨ Empowerment</h3>
                     <p>Condividere le sfide con chi le ha superate ti accelerano al successo.</p>
                 </div>
                 <div class="value-card">
-                    <div class="value-icon">🔗</div>
-                    <h3>Networking</h3>
+                    <h3>🔗 Networking</h3>
                     <p>Creiamo un network di supporto dove ogni imprenditrice può trovare nuove opportunità e fare crescere la propria attività.</p>
                 </div>
                 <div class="value-card">
-                    <div class="value-icon">💫</div>
-                    <h3>Ispirazione</h3>
+                    <h3>💫 Ispirazione</h3>
                     <p>Condividiamo storie di successo, esperienze e idee che ispirano il cambiamento e la crescita.</p>
                 </div>
                 <div class="value-card">
-                    <div class="value-icon">🌟</div>
-                    <h3>Abbondanza</h3>
+                    <h3>🌟 Abbondanza</h3>
                     <p>Crediamo che tutte le donne devono puntare a una condizione economica di ricchezza e prosperità.</p>
                 </div>
             </div>
-            
-            <!-- Photo Gallery -->
+            <!-- Photo Gallery Carousel -->
             <div class="photo-gallery">
                 <div class="gallery-container">
                     <img src="assets/photo2.jpg" alt="GLOW Event Photo" class="gallery-img">
@@ -86,35 +78,19 @@
                     <img src="assets/photo5.jpg" alt="GLOW Event Photo" class="gallery-img">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Join Section -->
-    <section class="join" id="join">
-        <div class="container">
+        <!-- Join Section -->
+        <section class="join" id="join">
             <div class="join-content">
-                <h2>Unisciti a noi oggi!</h2>
+                <h2 class="dramatic-text">Unisciti a noi oggi!</h2>
                 <p>Sei pronta a far parte di una rete che ti supporta e ti ispira? Entra a far parte della nostra community! Iscriviti al prossimo Meetup GLOW e inizia a costruire relazioni che ti aiuteranno a crescere nel tuo percorso professionale.</p>
                 <a href="#" class="btn">Iscriviti ora</a>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#">Home</a>
-                <a href="#about">Chi siamo</a>
-                <a href="#values">Valori</a>
-                <a href="#join">Unisciti</a>
-                <a href="#">Contatti</a>
-            </div>
-            <p>&copy; 2025 GLOW - Growing and Leading Opportunities for Women. Tutti i diritti riservati.</p>
-        </div>
-    </footer>
-
-    <script src="js/scripts.js"></script>
     <script src="js/particles.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
